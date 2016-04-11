@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
+		<script src="js/main.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/main.css">	
+		<title>Hero Creator</title>
+	</head>
+	<body>
+
+		<div class="main-container" ng-controller="HeroController">
+
+				<div class="big-hero center-block">
+						<div id="dragVehicle" style="display:inline-block">
+							<img id="yukon" src="" name="image-swap">
+						</div>										
+					<div id="draggable1" class="draggable widget-content">						
+						<p class="output-text" ng-repeat="el in list">{{el.value}}</p>
+					</div>
+				</div>
+
+
+			<br style="clear:both">
+			<div class="background-options">
+				<div class="row center-block">
+					<h2 class="text-center">Background</h2>
+					<div class="col-md-4">
+						<h4>Select Background</h4>
+					
+						<select name="bckrnd-image" id="bckrnd-image">
+							<option>-----------</option>
+						    <option value="css/photos/2015-Yukon.png">Yukon</option>
+						    <option value="css/photos/Encore.png">Encore</option>
+						    <option value="css/photos/Terrain.png">Terrain</option>
+
+						</select>
+					</div>
+					<div class="col-md-4">
+						<h4>Random Image</h4>
+						<select name="random-image" id="random-image">
+							<option>-----------</option>
+						    <option value="css/photos/MyriadDollarSign.png">Dollar Sign</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<h4>Hero Size</h4>
+					</div>
+				</div>
+			</div>
+			<div class="hero-text-options">
+				<h2 class="text-center">Edit Hero Slide Text</h2>
+				<div class="row center-block">
+					<div class="col-md-4">
+						<h4>Select Text</h4>
+						<p>{{sampleText}}</p>
+						<div ng-repeat="item in list">
+							<label>Text to Display on Hero</label>
+							<input ng-model="item.value" type="text">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h4>Select Font</h4>
+						<select id="input-font" class="input">
+							<option value="timesnewroman">Times New Roman</option>
+							<option value="tangerine">Tangerine</option>
+							<option value="monospace">monospace</option>
+							<option value="impact">Impact</option>
+							<option value="verdana">Verdana</option>
+							<option value="myriad-pro">myriad-pro</option>
+							<option value="'ms comic sans'">MS Comic Sans</option>
+						</select>
+						<h4>Resizable Box Background Color</h4>
+						<select name="txtBackgroundColor" id="txtBackgroundColor">
+							<option value="rgba(0,0,0,0)">-------------</option>
+							<option value="#3366CC">Blue</option> 
+							<option value="#E070D6">Fuchsia</option> 
+							<option value="#808080">Gray</option> 
+							<option value="#4bb64f">Green</option> 
+							<option value="#ed9d2b">Orange</option> 
+							<option value="#FF9CB3">Pink</option> 
+							<option value="#EA4A4A">Red</option> 
+						</select>
+					</div>
+					<div class="col-md-4">
+						<h4>Font Color</h4>
+						<select id="fontColor">
+							<option>-------------</option>
+							<option value="#ffffff">White</option>
+							<option value="#000000">Black</option>
+							<option value="#3366CC">Blue</option> 
+							<option value="#E070D6">Fuchsia</option> 
+							<option value="#808080">Gray</option> 
+							<option value="#4bb64f">Green</option> 
+							<option value="#ed9d2b">Orange</option> 
+							<option value="#FF9CB3">Pink</option> 
+							<option value="#EA4A4A">Red</option> 
+							</option>
+						</select>
+						<h4>Font Size</h4>
+						<select id="input-font-size" class="input">
+							  <option value='12'>12</option>
+							  <option value='14'>14</option>
+							  <option value='16'>16</option>
+							  <option value='18'>18</option>
+							  <option value='20'>20</option>
+							  <option value='22'>22</option>
+							  <option value='26'>26</option>
+							  <option value='48'>48</option>
+							  <option value='63'>63</option>
+							  <option value='100'>100</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div id="dollar-signs" class="draggable widget-content">
+				<img id="dollar-sign" src="css/photos/MyriadDollarSign.png">
+			</div>
+
+		</div>
+
+
+
+	</body>
+</html>

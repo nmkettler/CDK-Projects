@@ -1,0 +1,51 @@
+html{
+	background-color: #a8a8a8;
+	margin: 0;
+}
+.main-container{
+	background-color: gray;
+	position: relative;
+	padding-top: 30px
+}
+
+.background-options{
+	background-color: #d3d3d3;
+}
+
+.hero-text-options{
+	background-color: #bdbdbd;
+	padding: 15px 0 20px 0;
+}
+.widget-header{
+	background-color: #545454;
+	position: relative;
+}
+.widget-content p{
+	color:white;
+	text-align: center;
+	
+}
+.draggable{	
+	padding: 5px; 
+	float: left; 
+	margin: 0 10px 10px 0; 
+}
+
+#draggable1{
+	background-color: #333333;
+	width:200px;
+	height: 100px;
+	padding: 5px; 
+	float: left; 
+	margin: 0 10px 10px 0; 
+	font-size: .9em;
+}
+.big-hero{
+	background-color: #ffffff;
+	padding-top: 30px;
+	width: 1280px;
+	height: 525px;
+	position: relative;
+}
+
+
