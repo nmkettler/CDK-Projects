@@ -7,8 +7,9 @@
 
 	$scope.fontOutput = function(){
 
-		$scope.list = [ { value: 'Drag to Resize'}, { value: ''}, { value: ''}];
-
+		$scope.firstText = [ { value: 'Text Box 1'}];
+		$scope.secondText = [ { value: 'Text Box 2'}];
+		
 	}
 
 
@@ -20,32 +21,60 @@
 
 
 $(document).ready(function(){
+	/*--------------Drag/Resize items-----------------*/
 
 $(function snapFunctions(){
-	$( "#draggable1" ).draggable({ snap: ".big-hero" });
 	
-	$( "#draggable1" ).resizable();
-	
+	//Text/text box to resize
+	$( "#draggable1" ).draggable({ snap: ".big-hero" });	
+	$( "#draggable1" ).resizable({
+		start:function(event,ui){ //Other images/divs when resized do not affect overall flow
+            ui.element.css('position','absolute');
+        }
+	});
+	$( "#secTextDraggable").draggable({ snap: ".big-hero" });
+	$( "#secTextDraggable").resizable({
+		start:function(event,ui){ //Other images/divs when resized do not affect overall flow
+            ui.element.css('position','absolute');
+        }
+	});
 
-	//Change Background Image
-	$("#bckrnd-image").change(function(){
-     $("img[name=image-swap]").attr("src",$(this).val());
-     $( "#dragVehicle" ).draggable({ snap: ".big-hero" });
-		$( "#yukon" ).resizable();
-   });
+	//Random Images Drag/Resize
 	$("#random-image").change(function(){
-     $("img[name=random-image]").attr("src",$(this).val());
-     $( "#dollar-signs" ).draggable({ snap: ".big-hero" });
-		$( "#dollar-sign" ).resizable();
+     	$('img[name=signSelect]').attr("src",$(this).val());
+     	$('#individSign').resizable({
+     		containment: ".big-hero",
+     		start:function(event,ui){ //Other images/divs when resized do not affect overall flow
+            ui.element.css('position','absolute');
+        }
+     	});
+     	$( "#signOutput" ).draggable({ 
+     		containment: ".big-hero"
+     	 });
+		
    });
+
   });
 
-	$(function vehiclePhoto(){
-		
+
+	$(function changeVehicle(){
+		//Change Vehicle Image/Resize
+		$("#vehicle-image").change(function(){
+	     	$('img[name=image-swap]').attr("src",$(this).val());
+	     	$( "#individVehicle").resizable({
+	     		containment: ".big-hero",
+	     		start:function(event,ui){ //Other images/divs when resized do not affect overall flow
+            ui.element.css('position','absolute');
+        }
+	     	});
+	     	$( "#vehicleOutput" ).draggable();
+   });
+
 	});
+
    $(function changeFontSize(){
 	  $("#input-font-size").change(function(){
-	$(".output-text").css("font-size",$(this).val() + "px");
+	$(".first-output-text").css("font-size",$(this).val() + "px");
 	})
 	});
 
@@ -54,18 +83,35 @@ $(function snapFunctions(){
    		$('#draggable1').css('background-color', $(this).val());
    	})
    });
-   $(function changeResizeBackgroundColor(){
+   $(function changeResizeFontColor(){
    	$('#fontColor').change(function (){
-   		$('.output-text').css('color', $(this).val());
+   		$('.first-output-text').css('color', $(this).val());
+   	})
+   });
+   $(function changeBackground(){
+   	$('#heroBackgroundImg').change(function (){
+   		value = $(this).val();
+   		$('#big-hero-id').css({
+   			'background-image': 'url(' + value + ')',
+   			'background-color': value
+   		});
+   	})
+   	$('#heroBackgroundColor').change(function (){
+   		value = $(this).val();
+   		$('#big-hero-id').css({
+   			'background-image': 'url(' + value + ')',
+   			'background-color': value
+   		});
    	})
    });
 
    $(function changeFontFamily(){
    	$('#input-font').change(function (){
-   		$('.output-text').css('fontFamily', $(this).val());
+   		$('.first-output-text').css("font-family", $(this).val());
    	});
    });
 
 });
+
 
 

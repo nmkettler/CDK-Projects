@@ -5,7 +5,8 @@ html{
 .main-container{
 	background-color: gray;
 	position: relative;
-	padding-top: 30px
+	padding-top: 30px;
+	width: 100%;
 }
 
 .background-options{
@@ -32,7 +33,7 @@ html{
 }
 
 #draggable1{
-	background-color: #333333;
+	background-color: none;
 	width:200px;
 	height: 100px;
 	padding: 5px; 
@@ -40,12 +41,44 @@ html{
 	margin: 0 10px 10px 0; 
 	font-size: .9em;
 }
+
+.draggable p{
+	color:black;
+	font-size: 15px;
+}
+#secTextDraggable{
+background-color: none;
+	width:200px;
+	height: 100px;
+	padding: 5px; 
+	float: left; 
+	margin: 0 10px 10px 0; 
+	font-size: .9em;
+}
+
 .big-hero{
 	background-color: #ffffff;
-	padding-top: 30px;
+	
 	width: 1280px;
 	height: 525px;
 	position: relative;
 }
+
+#signOutput{
+width: 400px;
+	height: 200px;
+	display:none;
+}
+#individSign{
+	width: 400px;
+	height: 200px;
+	display:none;
+}
+#individVehicle{
+	width: 400px;
+	height: 200px;
+	display:none;
+}
+
 
 
