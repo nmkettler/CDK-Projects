@@ -9,7 +9,14 @@
 
 		$scope.firstText = [ { value: 'Text Box 1'}];
 		$scope.secondText = [ { value: 'Text Box 2'}];
-		
+
+    //Lease special Template 
+    $scope.percentTxt = [ { value: '50%' } ];
+		$scope.ofMsrp = [ { value: 'OF MSRP' } ];
+    $scope.msrpCashTxt = [ { value: 'CASH BACK' } ];
+    $scope.descLeaseTxt = [ { value: 'ON MOST REMAINING 2015 CHEVY VEHICLES' } ];
+    $scope.smllText = [ { value: '------------PLUS----------------' } ];
+    $scope.secDescrTxt = [ { value: '2016 CRUZE LIMITED & MALIBU LIMITED' } ];
 	}
 
 
@@ -38,6 +45,11 @@ $(function snapFunctions(){
             ui.element.css('position','absolute');
         }
 	});
+
+  //Lease Template form
+  $( ".lease-text-template").draggable({ snap: ".big-hero" });
+  
+  
 
 	//Random Images Drag/Resize
 	$("#random-image").change(function(){
@@ -109,6 +121,19 @@ $(function snapFunctions(){
    	$('#input-font').change(function (){
    		$('.first-output-text').css("font-family", $(this).val());
    	});
+   });
+
+
+   $(function createLeaseText(){
+    $('#output-lease-txt').on('click', function(){
+      
+    })
+   });
+
+   $(function hideLeaseForm(){
+      $('#showForm').on("click", function(){
+        $('.lease-text-template').toggle();
+      });
    });
 
 });

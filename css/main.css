@@ -9,8 +9,9 @@ html{
 	width: 100%;
 }
 
-.background-options{
+.background-options-container{
 	background-color: #d3d3d3;
+	padding-bottom: 20px;
 }
 
 .hero-text-options{
@@ -80,5 +81,64 @@ width: 400px;
 	display:none;
 }
 
+.template-container{
+	padding: 20px 0 50px 0;
+	background-color: #d3d3d3;
+}
 
+article.lease-text-template{
+	position: absolute;
+	width: 500px;
+	display: none;
+}
 
+hgroup, .percent{
+	float: left;
+	display: block;
+}
+
+h2 span{
+  font-size: 50px;
+  letter-spacing: -5px;
+  line-height: 10px;
+  margin: 0 0 5px;
+  padding:0 10px 0 0;
+}
+h3 span{
+  font-size: 20px;
+  margin: 0 0 5px;
+  padding: 1px 10px 0 0;
+}
+h4 span{
+  font-size: 15px;
+  margin: 0;
+  padding: 1px 10px 0 0;
+
+}
+
+h6 span{
+position: relative;
+font-size: 13px;
+left:50%;
+}
+#cashBack{
+	float: left;
+	display: block;
+	margin: -17px 0 10px 0;
+
+}
+
+#mostremain{
+	float: left;
+}
+
+#plus{
+	float: left;
+}
+
+#onSelect{
+	float: left;
+	line-height: 50px;
+	position: relative;
+	margin-left: -7.3em;
+}

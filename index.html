@@ -40,11 +40,20 @@
 					<div id="signOutput" style="display:inline-block">
 						<img id = "individSign" src="" name="signSelect" />
 					</div>
+					<article class="lease-text-template">
+						<hgroup class="percentLeaseEg">
+							<h2><span class="percent" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
+							<h3 ng-repeat="cc in ofMsrp"><span id="cashBack" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
+							<h4><span id="mostremain" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
+							<h6 id="plus" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
+							<h4 id="onSelect" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
+						</hgroup>
+					</article>
 				</div>
 
 
 			<br style="clear:both">
-			<div class="background-options">
+			<div class="background-options-container">
 				<div class="row center-block">
 					<h2 class="text-center">Background</h2>
 					<div class="col-md-4">
@@ -113,7 +122,7 @@
 							<option value="Helvetica, Arial, sans-serif">GM Font</option>
 							<option value="Comic Sans MS">MS Comic Sans</option>
 						</select>
-						<h4>Resizable Box Background Color</h4>
+						<h4>Text Box Background Color</h4>
 						<select name="txtBackgroundColor" id="txtBackgroundColor">
 							<option value="rgba(0,0,0,0)">-------------</option>
 							<option value="#3366CC">Blue</option> 
@@ -155,6 +164,48 @@
 						</select>
 					</div>
 
+				</div>
+			</div>
+			<div class="template-container">
+				<h2 class="text-center">Templates</h2>
+				<div class="row center-block">
+					<div class="col-md-3">							
+					</div>
+					<div class="col-md-3">
+						<h4>Lease Special Template</h4>	
+						<div id="lease-template-input">
+							<div ng-repeat="bb in percentTxt">
+							<label>Percent Text</label>
+							<input ng-model="bb.value" type="text">							
+						</div>
+						<div ng-repeat="bb in ofMsrp">
+							<label>Line 1</label>
+							<input ng-model="bb.value" type="text">							
+						</div>	
+						<div ng-repeat="cc in msrpCashTxt">
+							<label>Line 2</label>
+							<input ng-model="cc.value" type="text">							
+						</div>
+						<div ng-repeat="cc in descLeaseTxt">
+							<label>Descriptive</label>
+							<input ng-model="cc.value" type="text">							
+						</div>
+						<div ng-repeat="cc in smllText">
+							<label>Smaller Text</label>
+							<input ng-model="cc.value" type="text">							
+						</div>
+						<div ng-repeat="cc in secDescrTxt">
+							<label>Second Descriptive</label>
+							<input ng-model="cc.value" type="text">							
+						</div>
+						</div>
+						<button class="btn btn-primary" id="showForm">Show Form</button>
+					</div>
+					<div class="col-md-3">
+						<h4>Disclaimer Template</h4>
+					</div>
+					<div class="col-md-3">
+					</div>
 				</div>
 			</div>
 
