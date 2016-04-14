@@ -67,7 +67,12 @@
 							<option value="css/photos/Cadillac-ATS-V-Coupe-Bckgrn.png">Cadillac ATS Coupe</option>
 							<option value="css/photos/16SilveradoCrewCabBackgroun.png">Silverado Crew Cab</option>
 							<option value="css/photos/GMCTruck.png">GMC Truck</option>    
-						</select>
+						</select>				
+						  <div id="canvasWrapper" class="outer">
+							  <p>Canvas-rendered (try right-click, save image as!)</p>
+							  <input type="button" id="btnSave" download="cat.png" value="Save PNG"/>
+							</div>
+						
 						<h4>Select Vehicle</h4>
 					
 						<select name="vehicle-image" id="vehicle-image">
@@ -109,7 +114,7 @@
 			<div class="hero-text-options">
 				<h2 class="text-center">Edit Hero Slide Text</h2>
 				<div class="row center-block">
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<h4>Select Text</h4>
 						<div ng-repeat="item in firstText">
 							<label>Text to Display on Hero</label>
@@ -124,7 +129,7 @@
 							<input type="checkbox" name="secondItem" value="secondItem">
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<h4>Select Font</h4>
 						<select id="input-font" class="input">
 							<option value="timesnewroman">Times New Roman</option>
@@ -147,8 +152,8 @@
 							<option value="#EA4A4A">Red</option>
 						</select>
 					</div>
-					<div class="col-md-4">
-						<h4>Font Color</h4>
+					<div class="col-md-3">
+						<h4>Text Box 1 Font Color</h4>
 						<select id="fontColor">
 							<option value="">-------------</option>
 							<option value="#ffffff">White</option>
@@ -162,7 +167,36 @@
 							<option value="#EA4A4A">Red</option> 
 							</option>
 						</select>
-						<h4>Font Size</h4>
+						<h4>Text Box 1 Font Size</h4>
+						<select id="input-font-size" class="input">
+							  <option value='12'>12</option>
+							  <option value='14'>14</option>
+							  <option value='16'>16</option>
+							  <option value='18'>18</option>
+							  <option value='20'>20</option>
+							  <option value='22'>22</option>
+							  <option value='26'>26</option>
+							  <option value='48'>48</option>
+							  <option value='63'>63</option>
+							  <option value='100'>100</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<h4>Text Box 2 Font Color</h4>
+						<select id="fontColor">
+							<option value="">-------------</option>
+							<option value="#ffffff">White</option>
+							<option value="#000000">Black</option>
+							<option value="#3366CC">Blue</option> 
+							<option value="#E070D6">Fuchsia</option> 
+							<option value="#808080">Gray</option> 
+							<option value="#4bb64f">Green</option> 
+							<option value="#ed9d2b">Orange</option> 
+							<option value="#FF9CB3">Pink</option> 
+							<option value="#EA4A4A">Red</option> 
+							</option>
+						</select>
+						<h4>Text Box 2 Font Size</h4>
 						<select id="input-font-size" class="input">
 							  <option value='12'>12</option>
 							  <option value='14'>14</option>
@@ -231,8 +265,6 @@
 			</div>
 
 		</div>
-
-
 
 	</body>
 </html>

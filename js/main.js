@@ -166,7 +166,10 @@ $('#heroSize').change(function (){
       });
    });
 
+
 });
+
+
 
 
 
