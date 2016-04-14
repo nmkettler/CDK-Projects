@@ -17,6 +17,10 @@
     $scope.descLeaseTxt = [ { value: 'ON MOST REMAINING 2015 CHEVY VEHICLES' } ];
     $scope.smllText = [ { value: '------------PLUS----------------' } ];
     $scope.secDescrTxt = [ { value: '2016 CRUZE LIMITED & MALIBU LIMITED' } ];
+
+    //Disclaimer Template
+    $scope.disclaimTxt = [ { value: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } ];
+
 	}
 
 
@@ -49,7 +53,13 @@ $(function snapFunctions(){
   //Lease Template form
   $( ".lease-text-template").draggable({ snap: ".big-hero" });
   
-  
+  //Disclaimer Template
+  $(".disclaimerTxt").draggable({ snap: ".big-hero" });
+  $(".disclaimerTxt").resizable({ 
+    start:function(event,ui){
+      ui.element.css('position', 'absolute');
+    }
+   });
 
 	//Random Images Drag/Resize
 	$("#random-image").change(function(){
@@ -117,22 +127,42 @@ $(function snapFunctions(){
    	})
    });
 
+$(function adjustHeroSlide(){
+$('#heroSize').change(function (){
+  value = $(this).val();
+
+})
+
+});
+
    $(function changeFontFamily(){
    	$('#input-font').change(function (){
    		$('.first-output-text').css("font-family", $(this).val());
    	});
    });
 
-
-   $(function createLeaseText(){
-    $('#output-lease-txt').on('click', function(){
-      
+   $(function showEditableText(){
+    var check1 = $( "input[name='firstItem']" );
+    var check2 = $( "input[name='secondItem']" );
+    $(check1).click(function(){
+      if (this.checked){
+        $("#draggable1").toggle();
+      }
     })
+    $(check2).click(function(){
+      if (this.checked){
+        $('#secTextDraggable').toggle();
+      }
+    })
+
    });
 
-   $(function hideLeaseForm(){
+   $(function showTemplates(){
       $('#showForm').on("click", function(){
         $('.lease-text-template').toggle();
+      });
+      $('#showDisclaim').on("click", function(){
+        $('.disclaimerTxt').toggle();
       });
    });
 
