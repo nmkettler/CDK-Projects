@@ -98,6 +98,9 @@ $(function snapFunctions(){
 	  $("#input-font-size").change(function(){
 	$(".first-output-text").css("font-size",$(this).val() + "px");
 	})
+    $("#input-font-size-2").change(function(){
+      $(".sec-output-text").css("font-size",$(this).val() + "px");
+    })
 	});
 
    $(function changeResizeBackgroundColor(){
@@ -109,6 +112,9 @@ $(function snapFunctions(){
    	$('#fontColor').change(function (){
    		$('.first-output-text').css('color', $(this).val());
    	})
+    $('#fontColor-2').change(function(){
+      $('.sec-output-text').css('color', $(this).val());
+    })
    });
    $(function changeBackground(){
    	$('#heroBackgroundImg').change(function (){
@@ -166,6 +172,30 @@ $('#heroSize').change(function (){
       });
    });
 
+
+$(function dnldDiv(){
+  //Append to a canvas in order to download div as an img
+  
+  var element = $("#big-hero-id"); // global variable
+  var getCanvas; // global variable
+   
+      $("#btn-Preview-Image").on('click', function () {
+           html2canvas(element, {
+           onrendered: function (canvas) {
+                  $("#previewImage").append(canvas);
+                  getCanvas = canvas;
+               }
+           });
+      });
+
+    //Download to image
+    $("#btn-Convert-Html2Image").on('click', function () {
+    var imgageData = getCanvas.toDataURL("image/png");
+    // Now browser starts downloading it instead of just showing it
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+});
+})
 
 });
 

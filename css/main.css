@@ -158,7 +158,9 @@ left:50%;
 	display: none;
 }
 
-
+#previewImage{
+	display: none;
+}
 
 
 

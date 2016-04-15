@@ -68,11 +68,7 @@
 							<option value="css/photos/16SilveradoCrewCabBackgroun.png">Silverado Crew Cab</option>
 							<option value="css/photos/GMCTruck.png">GMC Truck</option>    
 						</select>				
-						  <div id="canvasWrapper" class="outer">
-							  <p>Canvas-rendered (try right-click, save image as!)</p>
-							  <input type="button" id="btnSave" download="cat.png" value="Save PNG"/>
-							</div>
-						
+						  						
 						<h4>Select Vehicle</h4>
 					
 						<select name="vehicle-image" id="vehicle-image">
@@ -108,6 +104,9 @@
 							<option id="width:1280px height:525px">1280 x 525 Pixels</option>
 							<option></option>
 						</select>
+						<h4>Save/Download Slide</h4>
+						<button class="btn btn-danger" id="btn-Preview-Image" type="button" value="Save">Save</button>
+    					<a class="btn btn-success" id="btn-Convert-Html2Image" href="#">Download</a>
 					</div>
 				</div>
 			</div>
@@ -183,7 +182,7 @@
 					</div>
 					<div class="col-md-3">
 						<h4>Text Box 2 Font Color</h4>
-						<select id="fontColor">
+						<select id="fontColor-2">
 							<option value="">-------------</option>
 							<option value="#ffffff">White</option>
 							<option value="#000000">Black</option>
@@ -197,7 +196,7 @@
 							</option>
 						</select>
 						<h4>Text Box 2 Font Size</h4>
-						<select id="input-font-size" class="input">
+						<select id="input-font-size-2" class="input">
 							  <option value='12'>12</option>
 							  <option value='14'>14</option>
 							  <option value='16'>16</option>
@@ -263,7 +262,7 @@
 					</div>
 				</div>
 			</div>
-
+    			<div id="previewImage"></div>
 		</div>
 
 	</body>
