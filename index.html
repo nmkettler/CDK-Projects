@@ -50,6 +50,15 @@
 							<h4 id="onSelect" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
 						</hgroup>
 					</article>
+					<article class="lease-text-template-1">
+						<hgroup class="percentLeaseEg">
+							<h2><span class="percent-1" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
+							<h3 ng-repeat="cc in ofMsrp"><span id="cashBack-1" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
+							<h4><span id="mostremain-1" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
+							<h6 id="plus-1" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
+							<h4 id="onSelect-1" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
+						</hgroup>
+					</article>
 					<div class ="disclaimerTxt">
 						<p ng-repeat="bb in disclaimTxt">{{bb.value}}</p>
 					</div>
@@ -141,9 +150,9 @@
 						</select>
 						<h4>Text Box Background Color</h4>
 						<select name="txtBackgroundColor" id="txtBackgroundColor">
-							<option value="rgba(0,0,0,0)">-------------</option>
+							<option value="rgba(0,0,0,0.9)">-------------</option>
 							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
+							<option value="rgba(0,0,0,0.7)">75% Opacity</option> 
 							<option value="#808080">Gray</option> 
 							<option value="#4bb64f">Green</option> 
 							<option value="#ed9d2b">Orange</option> 
@@ -166,21 +175,6 @@
 							<option value="#EA4A4A">Red</option> 
 							</option>
 						</select>
-						<h4>Text Box 1 Font Size</h4>
-						<select id="input-font-size" class="input">
-							  <option value='12'>12</option>
-							  <option value='14'>14</option>
-							  <option value='16'>16</option>
-							  <option value='18'>18</option>
-							  <option value='20'>20</option>
-							  <option value='22'>22</option>
-							  <option value='26'>26</option>
-							  <option value='48'>48</option>
-							  <option value='63'>63</option>
-							  <option value='100'>100</option>
-						</select>
-					</div>
-					<div class="col-md-3">
 						<h4>Text Box 2 Font Color</h4>
 						<select id="fontColor-2">
 							<option value="">-------------</option>
@@ -194,6 +188,21 @@
 							<option value="#FF9CB3">Pink</option> 
 							<option value="#EA4A4A">Red</option> 
 							</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<h4>Text Box 1 Font Size</h4>
+						<select id="input-font-size" class="input">
+							  <option value='12'>12</option>
+							  <option value='14'>14</option>
+							  <option value='16'>16</option>
+							  <option value='18'>18</option>
+							  <option value='20'>20</option>
+							  <option value='22'>22</option>
+							  <option value='26'>26</option>
+							  <option value='48'>48</option>
+							  <option value='63'>63</option>
+							  <option value='100'>100</option>
 						</select>
 						<h4>Text Box 2 Font Size</h4>
 						<select id="input-font-size-2" class="input">
@@ -245,18 +254,53 @@
 							<label>Second Descriptive</label>
 							<input class="form-control" ng-model="cc.value" type="text">							
 						</div>
-						</div>
+						</div>					
+						<select id="templateSize">
+							<option value="">Template Size</option>
+							<option value="small">Small</option>
+							<option value="medium">Medium</option>
+							<option value="large">Large</option> 
+							</option>
+						</select>
+						<button class="btn btn-danger" id="clearForm">Clear Form</button>
+						<select id="leaseSpecial1FontColor">
+							<option value="">Change Text Color</option>
+							<option value="#ffffff">White</option>
+							<option value="#000000">Black</option>
+							<option value="#3366CC">Blue</option> 
+							<option value="#E070D6">Fuchsia</option> 
+							<option value="#808080">Gray</option> 
+							<option value="#4bb64f">Green</option> 
+							<option value="#ed9d2b">Orange</option> 
+							<option value="#FF9CB3">Pink</option> 
+							<option value="#EA4A4A">Red</option> 
+							</option>
+						</select>
 					</form>
-						<button class="btn btn-primary" id="showForm">Show Form</button>
+
 					</div>
 					<div class="col-md-3">
 						<h4>Disclaimer Template</h4>
 						<div class="disclaimerInput">
 							<div ng-repeat="cc in disclaimTxt">
-							<textarea ng-model="cc.value" type="text" cols="40" rows="7">{{cc.value}}</textarea>							
+								<textarea ng-model="cc.value" type="text" cols="40" rows="7">{{cc.value}}</textarea>							
+							</div>
+							<button class="btn btn-primary" id="showDisclaim">Show Disclaimer</button>
+							
+							<select id="disclaimFontColor">
+							<option value="">Change Text Color</option>
+							<option value="#ffffff">White</option>
+							<option value="#000000">Black</option>
+							<option value="#3366CC">Blue</option> 
+							<option value="#E070D6">Fuchsia</option> 
+							<option value="#808080">Gray</option> 
+							<option value="#4bb64f">Green</option> 
+							<option value="#ed9d2b">Orange</option> 
+							<option value="#FF9CB3">Pink</option> 
+							<option value="#EA4A4A">Red</option> 
+							</option>
+						</select>
 						</div>
-						</div>
-						<button class="btn btn-primary" id="showDisclaim">Show Disclaimer</button>
 					</div>
 					<div class="col-md-3">
 					</div>

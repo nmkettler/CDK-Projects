@@ -92,10 +92,19 @@ width: 400px;
 	padding: 20px 0 50px 0;
 	background-color: #d3d3d3;
 }
+.template-container select{
+	padding: 5px 5px;
+	margin:0px 15px 0px 15px;
+}
 /*------Lease Template Text-----*/
 article.lease-text-template{
 	position: absolute;
-	width: 500px;
+	width: 800px;
+	display: none;
+}
+article.lease-text-template-1{
+	position: absolute;
+	width: 800px;
 	display: none;
 }
 
@@ -104,51 +113,91 @@ hgroup, .percent{
 	display: block;
 }
 
-h2 span{
-  font-size: 50px;
+
+.percent{
+	font-size: 50px;
   letter-spacing: -5px;
   line-height: 10px;
   margin: 0 0 5px;
   padding:0 10px 0 0;
 }
-h3 span{
-  font-size: 20px;
-  margin: 0 0 5px;
-  padding: 1px 10px 0 0;
-}
-h4 span{
-  font-size: 15px;
-  margin: 0;
-  padding: 1px 10px 0 0;
 
-}
-
-h6 span{
-position: relative;
-font-size: 13px;
-left:50%;
-}
 #cashBack{
 	float: left;
 	display: block;
 	margin: -17px 0 10px 0;
+	font-size: 20px;
+
+  padding: 1px 10px 0 0;
 
 }
 
 #mostremain{
 	float: left;
+	font-size: 15px;
+  	margin: 0;
+  	padding: 1px 10px 0 0;
 }
 
-#plus{
+#plus {
 	float: left;
+	position: relative;
+	font-size: 13px;
+	margin-left: 5em;
 }
 
 #onSelect{
 	float: left;
 	line-height: 50px;
 	position: relative;
-	margin-left: -7.3em;
+	margin-left: -14em;
+	font-size: 15px;
+  	padding: 1px 10px 0 0;
 }
+
+
+
+.percent-1{
+	font-size: 100px;
+  letter-spacing: -5px;
+  line-height: 15px;
+  margin: 0 0 8.5px;
+  padding:0 15px 0 0;
+}
+
+#cashBack-1{
+	float: left;
+	display: block;
+	margin: -25.5px 0 15px 0;
+	font-size: 27.5px;
+  	padding: 1.5px 15px 0 0;
+
+}
+
+#mostremain-1{
+	float: left;
+	font-size: 22.5px;
+  	margin: 0;
+  	padding: 1.5px 15px 0 0;
+}
+
+#plus-1 {
+	float: left;
+	position: relative;
+	font-size: 21.5px;
+	margin-left: 5em;
+}
+
+#onSelect-1{
+	float: left;
+	line-height: 75px;
+	position: relative;
+	margin-left: -16.2em;
+	font-size: 22.5px;
+  	padding: 1.5px 15px 0 0;
+}
+
+
 /*------/Lease Template Text-----*/
 
 .disclaimerTxt{

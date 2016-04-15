@@ -52,6 +52,7 @@ $(function snapFunctions(){
 
   //Lease Template form
   $( ".lease-text-template").draggable({ snap: ".big-hero" });
+  $( ".lease-text-template-1").draggable({ snap: ".big-hero" });
   
   //Disclaimer Template
   $(".disclaimerTxt").draggable({ snap: ".big-hero" });
@@ -115,6 +116,12 @@ $(function snapFunctions(){
     $('#fontColor-2').change(function(){
       $('.sec-output-text').css('color', $(this).val());
     })
+    $('#leaseSpecial1FontColor').change(function(){
+      $('.lease-text-template, .lease-text-template-1').css('color', $(this).val());
+    })
+    $('.disclaimerInput select').change(function(){
+      $('.disclaimerTxt').css('color', $(this).val());
+    })
    });
    $(function changeBackground(){
    	$('#heroBackgroundImg').change(function (){
@@ -164,8 +171,25 @@ $('#heroSize').change(function (){
    });
 
    $(function showTemplates(){
-      $('#showForm').on("click", function(){
-        $('.lease-text-template').toggle();
+    $('#templateSize').on('change', function(){
+      if ( this.value == 'small' )
+      {
+        $('article.lease-text-template').show();
+        $('article.lease-text-template-1').hide();
+      }else if( this.value== 'medium' )
+      {
+        $('article.lease-text-template-1').show();
+        $('article.lease-text-template').hide();
+      }else if( this.value== 'large' )
+      {
+        $('article.lease-text-template-1').show();
+        $('article.lease-text-template').hide();
+      }else{
+        $('article.lease-text-template, article.lease-text-template-1').hide();
+      }
+    })
+      $('#clearForm').on("click", function(){
+        $('.lease-text-template, .lease-text-template-1').hide();
       });
       $('#showDisclaim').on("click", function(){
         $('.disclaimerTxt').toggle();
@@ -195,7 +219,7 @@ $(function dnldDiv(){
     var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
     $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
 });
-})
+});
 
 });
 
