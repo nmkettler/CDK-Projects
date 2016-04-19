@@ -1,313 +1,343 @@
 <!DOCTYPE HTML>
 <html ng-app="myApp">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-			
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/theme.min.css"/>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script src="js/html2canvas.js" type="text/javascript"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
-		<script src="js/main.js"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" type="text/css" href="css/main.css">	
-		<title>Hero Creator</title>
-	</head>
-	<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/theme.min.css" />
 
-		<div class="main-container" ng-controller="HeroController">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/html2canvas.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
 
-				<div class="big-hero center-block" id="big-hero-id">
-					<div id="backgroundSelect" style="display:inline-block">
-							<img id= "individBackground" src="" name="bckgrnd-swap" />
-						</div>	
-						<div id="vehicleOutput" style="display:inline-block">
-							<img id= "individVehicle" src="" name="image-swap" />
-						</div>										
-					<div id="draggable1" class="draggable widget-content">						
-						<p class="first-output-text" ng-repeat="el in firstText">{{el.value}}</p>
-					</div>
-					<div id="secTextDraggable" class="draggable widget-content">
-						<p class="sec-output-text" ng-repeat="la in secondText">{{la.value}}</p>
-					</div>
-					<div id="signOutput" style="display:inline-block">
-						<img id = "individSign" src="" name="signSelect" />
-					</div>
-					<article class="lease-text-template">
-						<hgroup class="percentLeaseEg">
-							<h2><span class="percent" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
-							<h3 ng-repeat="cc in ofMsrp"><span id="cashBack" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
-							<h4><span id="mostremain" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
-							<h6 id="plus" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
-							<h4 id="onSelect" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
-						</hgroup>
-					</article>
-					<article class="lease-text-template-1">
-						<hgroup class="percentLeaseEg">
-							<h2><span class="percent-1" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
-							<h3 ng-repeat="cc in ofMsrp"><span id="cashBack-1" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
-							<h4><span id="mostremain-1" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
-							<h6 id="plus-1" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
-							<h4 id="onSelect-1" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
-						</hgroup>
-					</article>
-					<div class ="disclaimerTxt">
-						<p ng-repeat="bb in disclaimTxt">{{bb.value}}</p>
-					</div>
-				</div>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Hero Creator</title>
+  </head>
+
+  <body>
+
+    <div class="main-container" ng-controller="HeroController">
+
+      <div class="big-hero center-block" id="big-hero-id">
+        <div id="backgroundSelect" style="display:inline-block">
+          <img id="individBackground" src="" name="bckgrnd-swap" />
+        </div>
+        <div id="vehicleOutput" style="display:inline-block">
+          <img id="individVehicle" src="" name="image-swap" />
+        </div>
+        <div id="draggable1" class="draggable widget-content">
+          <p class="first-output-text" ng-repeat="el in firstText">{{el.value}}</p>
+        </div>
+        <div id="secTextDraggable" class="draggable widget-content">
+          <p class="sec-output-text" ng-repeat="la in secondText">{{la.value}}</p>
+        </div>
+        <div id="signOutput" style="display:inline-block">
+          <img id="individSign" src="" name="signSelect" />
+        </div>
+        <article class="lease-text-template-sm">
+          <hgroup class="percentLeaseEg">
+            <h2><span class="percent" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
+            <h3 ng-repeat="cc in ofMsrp"><span id="cashBack" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
+            <h4><span id="mostremain" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
+            <h6 id="plus" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
+            <h4 id="onSelect" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
+          </hgroup>
+        </article>
+        <article class="lease-text-template-lg">
+          <hgroup class="percentLeaseEg">
+            <h2><span class="percent-1" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
+            <h3 ng-repeat="cc in ofMsrp"><span id="cashBack-1" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
+            <h4><span id="mostremain-1" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
+            <h6 id="plus-1" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
+            <h4 id="onSelect-1" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
+          </hgroup>
+        </article>
+        <article class="lease-text-template-md">
+          <hgroup class="percentLeaseEg">
+            <h2><span class="percent-2" ng-repeat="aa in percentTxt">{{aa.value}}</span></h2>
+            <h3 ng-repeat="cc in ofMsrp"><span id="cashBack-2" ng-repeat="bb in msrpCashTxt"> {{cc.value}} <br>{{bb.value}}</span></h3>
+            <h4><span id="mostremain-2" ng-repeat="bb in descLeaseTxt">{{bb.value}}</span></h4>
+            <h6 id="plus-2" ng-repeat="bb in smllText"><span>{{bb.value}}</span></h6>
+            <h4 id="onSelect-2" ng-repeat="bb in secDescrTxt"><span>{{bb.value}}</span></h4>
+          </hgroup>
+        </article>
+        <div class="disclaimerTxt">
+          <p ng-repeat="bb in disclaimTxt">{{bb.value}}</p>
+        </div>
+      </div>
 
 
-			<br style="clear:both">
-			<div class="background-options-container">
-				<div class="row center-block">
-					<h2 class="text-center">Background</h2>
-					<div class="col-md-4">
-						<h4>Select Background Image</h4>				
-						<select name="heroBackgroundImg" id="heroBackgroundImg">
-							<option value="rgba(0,0,0,0)">-------------</option>							
-							<option value="css/photos/Cadillac-ATS-V-Coupe-Bckgrn.png">Cadillac ATS Coupe</option>
-							<option value="css/photos/16SilveradoCrewCabBackgroun.png">Silverado Crew Cab</option>
-							<option value="css/photos/GMCTruck.png">GMC Truck</option>    
-						</select>				
-						  						
-						<h4>Select Vehicle</h4>
-					
-						<select name="vehicle-image" id="vehicle-image">
-							<option value="">-----------</option>
-						    <option value="css/photos/2015-Yukon.png">Yukon</option>
-						    <option value="css/photos/Encore.png">Encore</option>
-						    <option value="css/photos/Terrain.png">Terrain</option>						    
-						</select>
-					</div>
-					<div class="col-md-4">
-						<h4>Random Image</h4>
-						<select name="random-image" id="random-image">
-							<option value="rgba(0,0,0,0)">-----------</option>
-						    <option value="css/photos/MyriadDollarSign.png">Dollar Sign</option>
-						    <option value="css/photos/Compliant-Buick-Logo.png">Buick Logo</option>
-						</select>
-						<h4>Select Background Color</h4>
-						<select name="heroBackgroundColor" id="heroBackgroundColor">
-							<option value="rgba(0,0,0,0)">-------------</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option>  
-						</select>
-					</div>
-					<div class="col-md-4">
-						<h4>Hero Size</h4>
-						<select id="heroSize">
-							<option value="width:1280px height:461px">1280 x 461 Pixels</option>
-							<option id="width:1280px height:525px">1280 x 525 Pixels</option>
-							<option></option>
-						</select>
-						<h4>Save/Download Slide</h4>
-						<button class="btn btn-danger" id="btn-Preview-Image" type="button" value="Save">Save</button>
-    					<a class="btn btn-success" id="btn-Convert-Html2Image" href="#">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="hero-text-options">
-				<h2 class="text-center">Edit Hero Slide Text</h2>
-				<div class="row center-block">
-					<div class="col-md-3">
-						<h4>Select Text</h4>
-						<div ng-repeat="item in firstText">
-							<label>Text to Display on Hero</label>
-							<input ng-model="item.value" type="text">
-							<label>Display on Hero Slide</label>
-							<input type="checkbox" name="firstItem" value="firstItem">
-						</div>
-						<div ng-repeat="secItem in secondText">
-							<label>Text to Display on Hero</label>
-							<input ng-model="secItem.value" type="text">
-							<label>Display on Hero Slide</label>
-							<input type="checkbox" name="secondItem" value="secondItem">
-						</div>
-					</div>
-					<div class="col-md-3">
-						<h4>Select Font</h4>
-						<select id="input-font" class="input">
-							<option value="timesnewroman">Times New Roman</option>
-							<option value="tangerine">Tangerine</option>
-							<option value="monospace">monospace</option>
-							<option value="impact">Impact</option>
-							<option value="verdana">Verdana</option>
-							<option value="Helvetica, Arial, sans-serif">GM Font</option>
-							<option value="Comic Sans MS">MS Comic Sans</option>
-						</select>
-						<h4>Text Box Background Color</h4>
-						<select name="txtBackgroundColor" id="txtBackgroundColor">
-							<option value="rgba(0,0,0,0.9)">-------------</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="rgba(0,0,0,0.7)">75% Opacity</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option>
-						</select>
-					</div>
-					<div class="col-md-3">
-						<h4>Text Box 1 Font Color</h4>
-						<select id="fontColor">
-							<option value="">-------------</option>
-							<option value="#ffffff">White</option>
-							<option value="#000000">Black</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option> 
-							</option>
-						</select>
-						<h4>Text Box 2 Font Color</h4>
-						<select id="fontColor-2">
-							<option value="">-------------</option>
-							<option value="#ffffff">White</option>
-							<option value="#000000">Black</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option> 
-							</option>
-						</select>
-					</div>
-					<div class="col-md-3">
-						<h4>Text Box 1 Font Size</h4>
-						<select id="input-font-size" class="input">
-							  <option value='12'>12</option>
-							  <option value='14'>14</option>
-							  <option value='16'>16</option>
-							  <option value='18'>18</option>
-							  <option value='20'>20</option>
-							  <option value='22'>22</option>
-							  <option value='26'>26</option>
-							  <option value='48'>48</option>
-							  <option value='63'>63</option>
-							  <option value='100'>100</option>
-						</select>
-						<h4>Text Box 2 Font Size</h4>
-						<select id="input-font-size-2" class="input">
-							  <option value='12'>12</option>
-							  <option value='14'>14</option>
-							  <option value='16'>16</option>
-							  <option value='18'>18</option>
-							  <option value='20'>20</option>
-							  <option value='22'>22</option>
-							  <option value='26'>26</option>
-							  <option value='48'>48</option>
-							  <option value='63'>63</option>
-							  <option value='100'>100</option>
-						</select>
-					</div>
+      <br style="clear:both">
+      <div class="background-options-container">
+        <div class="row center-block">
+          <h2 class="text-center">Background</h2>
+          <div class="col-md-4">
+            <h4>Select Background Image</h4>
+            <select name="heroBackgroundImg" id="heroBackgroundImg">
+              <option value="rgba(0,0,0,0)">-------------</option>
+              <option value="css/photos/Cadillac-ATS-V-Coupe-Bckgrn.png">Cadillac ATS Coupe</option>
+              <option value="css/photos/2016Traverse.jpg">2016 Traverse</option>
+              <option value="css/photos/16SilveradoCrewCabBackgroun.png">Silverado Crew Cab</option>
+              <option value="css/photos/GMCTruck.png">GMC Truck</option>
+            </select>
 
-				</div>
-			</div>
-			<div class="template-container">
-				<h2 class="text-center">Templates</h2>
-				<div class="row center-block">
-					<div class="col-md-3">							
-					</div>
-					<div class="col-md-3">
-						<h4>Lease Special Template</h4>	
-						<form class="form-vertical leaseFormClass" role="form">
-						<div class="form-group" id="lease-template-input">
-							<div ng-repeat="bb in percentTxt">
-							<label>Percent Text</label>
-							<input class="form-control" ng-model="bb.value" type="text">							
-						</div>
-						<div ng-repeat="bb in ofMsrp">
-							<label>Line 1</label>
-							<input class="form-control" ng-model="bb.value" type="text">							
-						</div>	
-						<div ng-repeat="cc in msrpCashTxt">
-							<label>Line 2</label>
-							<input class="form-control" ng-model="cc.value" type="text">							
-						</div>
-						<div ng-repeat="cc in descLeaseTxt">
-							<label>Descriptive</label>
-							<input class="form-control" ng-model="cc.value" type="text">							
-						</div>
-						<div ng-repeat="cc in smllText">
-							<label>Smaller Text</label>
-							<input class="form-control" ng-model="cc.value" type="text">							
-						</div>
-						<div ng-repeat="cc in secDescrTxt">
-							<label>Second Descriptive</label>
-							<input class="form-control" ng-model="cc.value" type="text">							
-						</div>
-						</div>					
-						<select id="templateSize">
-							<option value="">Template Size</option>
-							<option value="small">Small</option>
-							<option value="medium">Medium</option>
-							<option value="large">Large</option> 
-							</option>
-						</select>
-						<button class="btn btn-danger" id="clearForm">Clear Form</button>
-						<select id="leaseSpecial1FontColor">
-							<option value="">Change Text Color</option>
-							<option value="#ffffff">White</option>
-							<option value="#000000">Black</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option> 
-							</option>
-						</select>
-					</form>
+            <h4>Select Vehicle</h4>
 
-					</div>
-					<div class="col-md-3">
-						<h4>Disclaimer Template</h4>
-						<div class="disclaimerInput">
-							<div ng-repeat="cc in disclaimTxt">
-								<textarea ng-model="cc.value" type="text" cols="40" rows="7">{{cc.value}}</textarea>							
-							</div>
-							<button class="btn btn-primary" id="showDisclaim">Show Disclaimer</button>
-							
-							<select id="disclaimFontColor">
-							<option value="">Change Text Color</option>
-							<option value="#ffffff">White</option>
-							<option value="#000000">Black</option>
-							<option value="#3366CC">Blue</option> 
-							<option value="#E070D6">Fuchsia</option> 
-							<option value="#808080">Gray</option> 
-							<option value="#4bb64f">Green</option> 
-							<option value="#ed9d2b">Orange</option> 
-							<option value="#FF9CB3">Pink</option> 
-							<option value="#EA4A4A">Red</option> 
-							</option>
-						</select>
-						</div>
-					</div>
-					<div class="col-md-3">
-					</div>
-				</div>
-			</div>
-    			<div id="previewImage"></div>
-		</div>
+            <select name="vehicle-image" id="vehicle-image">
+              <option value="">-----------</option>
+              <option value="css/photos/2015-Yukon.png">Yukon</option>
+              <option value="css/photos/Encore.png">Encore</option>
+              <option value="css/photos/Terrain.png">Terrain</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <h4>Random Image</h4>
+            <select name="random-image" id="random-image">
+              <option value="rgba(0,0,0,0)">-----------</option>
+              <option value="css/photos/MyriadDollarSign.png">Dollar Sign</option>
+              <option value="css/photos/Compliant-Buick-Logo.png">Buick Logo</option>
+            </select>
+            <h4>Select Background Color</h4>
+            <select name="heroBackgroundColor" id="heroBackgroundColor">
+              <option value="#ffffff">-------------</option>
+              <option value="#000000">Black</option>
+              <option value="#EA4A4A">Red</option>
+              <option value="#3366CC">Blue</option>
+              <option value="#E070D6">Fuchsia</option>
+              <option value="#808080">Gray</option>
+              <option value="#4bb64f">Green</option>
+              <option value="#ed9d2b">Orange</option>
+              <option value="#FF9CB3">Pink</option>
+              <option value="#EA4A4A">Red</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <h4>Hero Size</h4>
+            <select id="heroSize">
+              <option value="width:1280px height:461px">1280 x 461 Pixels</option>
+              <option id="width:1280px height:525px">1280 x 525 Pixels</option>
+              <option></option>
+            </select>
+            <h4>Save/Download Slide</h4>
+            <button class="btn btn-danger" id="btn-Preview-Image" type="button" value="Save">Save</button>
+            <a class="btn btn-success" id="btn-Convert-Html2Image" href="#">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-text-options">
+        <h2 class="text-center">Edit Hero Slide Text</h2>
+        <div class="row center-block">
+          <div class="col-md-3">
+            <h4>Select Text</h4>
+            <div ng-repeat="item in firstText">
+              <label>Text to Display on Hero</label>
+              <input ng-model="item.value" type="text">
+              <label>Display on Hero Slide</label>
+              <input type="checkbox" name="firstItem" value="firstItem">
+            </div>
+            <div ng-repeat="secItem in secondText">
+              <label>Text to Display on Hero</label>
+              <input ng-model="secItem.value" type="text">
+              <label>Display on Hero Slide</label>
+              <input type="checkbox" name="secondItem" value="secondItem">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h4>Select Font</h4>
+            <select id="input-font" class="input">
+              <option value="timesnewroman">Times New Roman</option>
+              <option value="tangerine">Tangerine</option>
+              <option value="monospace">monospace</option>
+              <option value="impact">Impact</option>
+              <option value="verdana">Verdana</option>
+              <option value="Helvetica, Arial, sans-serif">GM Font</option>
+              <option value="Comic Sans MS">MS Comic Sans</option>
+            </select>
+            <h4>Text Box 1 Background Color</h4>
+            <select name="txtBackgroundColor" id="txtBackgroundColor">
+              <option value="#ffffff">-------------</option>
+              <option value="rgba(0,0,0,0.25)">25% Opacity</option>
+              <option value="rgba(0,0,0,0.5)">50% Opacity</option>
+              <option value="rgba(0,0,0,0.75)">75% Opacity</option>
+              <option value="rgba(0,0,0,0)">Black</option>
+              <option value="#3366CC">Blue</option>
+              <option value="#808080">Gray</option>
+              <option value="#ed9d2b">Orange</option>
+              <option value="#FF9CB3">Pink</option>
+              <option value="#EA4A4A">Red</option>
+            </select>
+            <h4>Text Box 2 Background Color</h4>
+            <select name="txtBackgroundColor-1" id="txtBackgroundColor-1">
+              <option value="#ffffff">-------------</option>
+              <option value="rgba(0,0,0,0.25)">25% Opacity</option>
+              <option value="rgba(0,0,0,0.5)">50% Opacity</option>
+              <option value="rgba(0,0,0,0.75)">75% Opacity</option>
+              <option value="rgba(0,0,0,0)">Black</option>
+              <option value="#3366CC">Blue</option>
+              <option value="#808080">Gray</option>
+              <option value="#ed9d2b">Orange</option>
+              <option value="#FF9CB3">Pink</option>
+              <option value="#EA4A4A">Red</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <h4>Text Box 1 Font Color</h4>
+            <select id="fontColor">
+              <option value="">-------------</option>
+              <option value="#ffffff">White</option>
+              <option value="#000000">Black</option>
+              <option value="#3366CC">Blue</option>
+              <option value="#E070D6">Fuchsia</option>
+              <option value="#808080">Gray</option>
+              <option value="#4bb64f">Green</option>
+              <option value="#ed9d2b">Orange</option>
+              <option value="#FF9CB3">Pink</option>
+              <option value="#EA4A4A">Red</option>
+              </option>
+            </select>
+            <h4>Text Box 2 Font Color</h4>
+            <select id="fontColor-2">
+              <option value="">-------------</option>
+              <option value="#ffffff">White</option>
+              <option value="#000000">Black</option>
+              <option value="#3366CC">Blue</option>
+              <option value="#E070D6">Fuchsia</option>
+              <option value="#808080">Gray</option>
+              <option value="#4bb64f">Green</option>
+              <option value="#ed9d2b">Orange</option>
+              <option value="#FF9CB3">Pink</option>
+              <option value="#EA4A4A">Red</option>
+              </option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <h4>Text Box 1 Font Size</h4>
+            <select id="input-font-size" class="input">
+              <option value='12'>12</option>
+              <option value='14'>14</option>
+              <option value='16'>16</option>
+              <option value='18'>18</option>
+              <option value='20'>20</option>
+              <option value='22'>22</option>
+              <option value='26'>26</option>
+              <option value='48'>48</option>
+              <option value='63'>63</option>
+              <option value='100'>100</option>
+            </select>
+            <h4>Text Box 2 Font Size</h4>
+            <select id="input-font-size-2" class="input">
+              <option value='12'>12</option>
+              <option value='14'>14</option>
+              <option value='16'>16</option>
+              <option value='18'>18</option>
+              <option value='20'>20</option>
+              <option value='22'>22</option>
+              <option value='26'>26</option>
+              <option value='48'>48</option>
+              <option value='63'>63</option>
+              <option value='100'>100</option>
+            </select>
+          </div>
 
-	</body>
+        </div>
+      </div>
+      <div class="template-container">
+        <h2 class="text-center">Templates</h2>
+        <div class="row center-block">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
+            <h4>Lease Special Template</h4>
+            <form class="form-vertical leaseFormClass" role="form">
+              <div class="form-group" id="lease-template-input">
+                <div ng-repeat="bb in percentTxt">
+                  <label>Percent Text</label>
+                  <input class="form-control" ng-model="bb.value" type="text">
+                </div>
+                <div ng-repeat="bb in ofMsrp">
+                  <label>Line 1</label>
+                  <input class="form-control" ng-model="bb.value" type="text">
+                </div>
+                <div ng-repeat="cc in msrpCashTxt">
+                  <label>Line 2</label>
+                  <input class="form-control" ng-model="cc.value" type="text">
+                </div>
+                <div ng-repeat="cc in descLeaseTxt">
+                  <label>Descriptive</label>
+                  <input class="form-control" ng-model="cc.value" type="text">
+                </div>
+                <div ng-repeat="cc in smllText">
+                  <label>Smaller Text</label>
+                  <input class="form-control" ng-model="cc.value" type="text">
+                </div>
+                <div ng-repeat="cc in secDescrTxt">
+                  <label>Second Descriptive</label>
+                  <input class="form-control" ng-model="cc.value" type="text">
+                </div>
+              </div>
+              <select id="templateSize">
+                <option value="">Template Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                </option>
+              </select>
+              <button class="btn btn-danger" id="clearForm">Clear Form</button>
+              <select id="leaseSpecial1FontColor">
+                <option value="">Change Text Color</option>
+                <option value="#ffffff">White</option>
+                <option value="#000000">Black</option>
+                <option value="#3366CC">Blue</option>
+                <option value="#E070D6">Fuchsia</option>
+                <option value="#808080">Gray</option>
+                <option value="#4bb64f">Green</option>
+                <option value="#ed9d2b">Orange</option>
+                <option value="#FF9CB3">Pink</option>
+                <option value="#EA4A4A">Red</option>
+                </option>
+              </select>
+            </form>
+
+          </div>
+          <div class="col-md-3">
+            <h4>Disclaimer Template</h4>
+            <div class="disclaimerInput">
+              <div ng-repeat="cc in disclaimTxt">
+                <textarea ng-model="cc.value" type="text" cols="40" rows="7">{{cc.value}}</textarea>
+              </div>
+              <button class="btn btn-primary" id="showDisclaim">Show Disclaimer</button>
+
+              <select id="disclaimFontColor">
+                <option value="">Change Text Color</option>
+                <option value="#ffffff">White</option>
+                <option value="#000000">Black</option>
+                <option value="#3366CC">Blue</option>
+                <option value="#E070D6">Fuchsia</option>
+                <option value="#808080">Gray</option>
+                <option value="#4bb64f">Green</option>
+                <option value="#ed9d2b">Orange</option>
+                <option value="#FF9CB3">Pink</option>
+                <option value="#EA4A4A">Red</option>
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
+      <div id="previewImage"></div>
+    </div>
+
+  </body>
+
 </html>

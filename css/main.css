@@ -65,8 +65,7 @@ background-color: none;
 }
 
 .big-hero{
-	background-color: #ffffff;
-	
+	background-color: #ffffff;	
 	width: 1280px;
 	height: 525px;
 	position: relative;
@@ -97,23 +96,29 @@ width: 400px;
 	margin:0px 15px 0px 15px;
 }
 /*------Lease Template Text-----*/
-article.lease-text-template{
+article.lease-text-template-sm{
 	position: absolute;
 	width: 800px;
 	display: none;
 }
-article.lease-text-template-1{
+article.lease-text-template-lg{
 	position: absolute;
 	width: 800px;
 	display: none;
 }
 
-hgroup, .percent{
+article.lease-text-template-md{
+	position: absolute;
+	width: 800px;
+	display: none;	
+}
+
+hgroup, .percent, .percent-1, .percent-2{
 	float: left;
 	display: block;
 }
 
-
+/*Small Lease Template*/
 .percent{
 	font-size: 50px;
   letter-spacing: -5px;
@@ -150,12 +155,12 @@ hgroup, .percent{
 	float: left;
 	line-height: 50px;
 	position: relative;
-	margin-left: -14em;
+	margin-left: -16em;
 	font-size: 15px;
   	padding: 1px 10px 0 0;
 }
 
-
+/*Large Lease Template*/
 
 .percent-1{
 	font-size: 100px;
@@ -169,7 +174,7 @@ hgroup, .percent{
 	float: left;
 	display: block;
 	margin: -25.5px 0 15px 0;
-	font-size: 27.5px;
+	font-size: 35px;
   	padding: 1.5px 15px 0 0;
 
 }
@@ -192,11 +197,52 @@ hgroup, .percent{
 	float: left;
 	line-height: 75px;
 	position: relative;
-	margin-left: -16.2em;
+	margin-left: -17.7em;
 	font-size: 22.5px;
   	padding: 1.5px 15px 0 0;
 }
 
+/*Medium Lease Template*/
+
+.percent-2{
+	font-size: 75px;
+  letter-spacing: -5px;
+  line-height: 15px;
+  margin: 0 0 8.5px;
+  padding:0 15px 0 0;
+}
+
+#cashBack-2{
+	float: left;
+	display: block;
+	margin: -25.5px 0 15px 0;
+	font-size: 30.25px;
+  	padding: 1.5px 15px 0 0;
+
+}
+
+#mostremain-2{
+	float: left;
+	font-size: 16.5px;
+  	margin: 0;
+  	padding: 1.5px 15px 0 0;
+}
+
+#plus-2 {
+	float: left;
+	position: relative;
+	font-size: 15.2px;
+	margin-left: 5em;
+}
+
+#onSelect-2{
+	float: left;
+	line-height: 75px;
+	position: relative;
+	margin-left: -17em;
+	font-size: 16.5px;
+  	padding: 1.5px 15px 0 0;
+}
 
 /*------/Lease Template Text-----*/
 
